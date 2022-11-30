@@ -27,25 +27,22 @@ const saveSubmit = (e) => {
     e.preventDefault();
     const title = formTask['task-title'].value;
     const description = formTask['task-description'].value;
-    const imageURL = document.querySelector('#image').src;
+    
 
-    if(title.length > 3 && description.length > 3){
-
-    if(!editStatus){
-        saveTask(title, description, imageURL);   
-        document.querySelector('#image').src = '';
-    } else {
-        updateTask(idForEdit, {
-            'title': title.value, 'description': description.value
-        });
-        editStatus = false;
-        document.querySelector('#btn-task-save').innerText = 'Save';
+        if(!editStatus){
+            saveTask(title.value, description.value);   
+        } else {
+            updateTask(idForEdit, {
+                'title': title.value, 'description': description.value
+            });
+            editStatus = false;
+            document.querySelector('#btn-task-save')  
+        }
+    
+        formTask.reset();
     }
-    formTask.reset();
-}else{
-    alert('esta vacio el campo');
-}
-}
+
+
 
 const uploadFileAction = (e) => {
     const file = e.target.files[0];
@@ -65,7 +62,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         const div = document.createElement('div');
         querySnapshot.forEach(doc => {
             const task = doc.data();
-            div.appendChild(card(doc.id, task.title, task.description , task.imageURL))
+            div.appendChild(card(doc.id, task.title, task.description , task.imageUrl))
         });
         taskContainer.appendChild(div);
     });

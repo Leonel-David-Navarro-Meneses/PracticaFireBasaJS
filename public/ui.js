@@ -10,7 +10,7 @@ export const card = (id, title, description) => {
       ${description}
     </div>`;
     if(image){
-      html +=  `<img src="${image}" class="image">`;
+      html +=  `<img src="${imageUrl}" class="image">`;
     }
     
     html += `<button class="edit button is-warning" data-id="${id}">Editar</button>
