@@ -11,6 +11,7 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://w
 const firebaseConfig = {
     apiKey: "AIzaSyDbWF34ninZ4DEWC0YvsAKMAZD9479cox4",
     authDomain: "practicafirebasejs-8e170.firebaseapp.com",
+    databaseURL: "https://practicafirebasejs-8e170-default-rtdb.firebaseio.com",
     projectId: "practicafirebasejs-8e170",
     storageBucket: "practicafirebasejs-8e170.appspot.com",
     messagingSenderId: "915416065471",

@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         const div = document.createElement('div');
         querySnapshot.forEach(doc => {
             const task = doc.data();
-            div.appendChild(card(doc.id, task.title, task.description))
+            div.appendChild(card(doc.id, task.title, task.description , task.imageURL))
         });
         taskContainer.appendChild(div);
     });
